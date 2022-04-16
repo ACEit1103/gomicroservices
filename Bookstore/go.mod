@@ -10,6 +10,7 @@ require (
 	gorm.io/gorm v1.23.4 // indirect
 )
 
-require github.com/jinzhu/gorm v1.9.16
-
-require github.com/jinzhu/inflection v1.0.0 // indirect
+require (
+	github.com/glebarez/sqlite v1.4.1 // indirect
+	github.com/jinzhu/gorm v1.9.16
+)
