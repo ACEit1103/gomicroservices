@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type Book struct {
@@ -23,7 +24,13 @@ func main() {
 
 	// r.Run()
 
-	db, _ := gorm.Open("sqlite3", "C:\\SQLiteStudio\\books.db")
+	fmt.Println("Go ORM Tutorial")
+
+	db, err := gorm.Open("sqlite3", "books.db")
+	if err != nil {
+		fmt.Println(err.Error())
+		panic("failed to connect database")
+	}
 	defer db.Close()
 	db.AutoMigrate(&Book{})
 
